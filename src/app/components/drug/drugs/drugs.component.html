@@ -1,0 +1,50 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-2">
+            <app-side-bar></app-side-bar>
+        </div>
+        <div class="col">
+          <div class="container mb-3">
+            <div *ngIf="message != undefined &&  message.length > 0" class="">
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <span> {{ message }} </span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            </div>
+            <span class="h2 fw-bold">Drugs</span>
+            <a class="btn btn-success float-end ms-1" routerLink="/add-drug">Add</a>
+            
+          </div>
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Side Effect</th>
+                    <th>Dosage</th>
+                    <th>Age Bracket</th>
+                    <th>MFD. DATE</th>
+                    <th>EXP. DATE</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="drugs.length > 0">
+                  <tr *ngFor="let drug of drugs; let i = index">
+                    <th> {{ i + 1 }} </th>
+                    <td>{{ drug.title }}</td>
+                    <td>{{ drug.description }}</td>
+                    <td>{{ drug.sideEffect }}</td>
+                    <td>{{ drug.dosage }}</td>
+                    <td>{{ drug.age }}</td>
+                    <td>{{ drug.mfDate | date:'medium' }}</td>
+                    <td>{{ drug.exDate | date:'medium'}}</td>
+                    <td><button class="btn btn-info btn-sm" [routerLink]="['/edit-drug', drug.id]">Edit</button></td>
+                    <td><button type="submit" [disabled]="drug.id < 1" class="btn btn-danger float-end" (click)="delete(drug.id)">Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+    
+</div>

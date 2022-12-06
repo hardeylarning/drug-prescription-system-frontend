@@ -1,0 +1,48 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-2">
+            <app-side-bar></app-side-bar>
+        </div>
+        <div class="col">
+          <div class="container mb-3">
+            <div *ngIf="message != undefined &&  message.length > 0" class="">
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <span> {{ message }} </span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            </div>
+            <span class="h2 fw-bold">Users</span>
+            <a class="btn btn-success float-end ms-1" routerLink="/add-user">Add</a>
+            
+          </div>
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Full Name</th>
+                    <th>Username</th>
+                    <th>Phone Number</th>
+                    <th>Country</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="users.length > 0">
+                  <tr *ngFor="let user of users; let i = index">
+                    <th> {{ i + 1 }} </th>
+                    <td>{{ user.fullName }}</td>
+                    <td>{{ user.userName }}</td>
+                    <td>{{ user.phoneNumber }}</td>
+                    <td>{{ user.country }}</td>
+                    <td>{{ user.gender }}</td>
+                    <td>{{ user.address }}</td>
+                    <td><button class="btn btn-info btn-sm" [routerLink]="['/edit-user', user.id]">Edit</button></td>
+                    <td><button type="submit" [disabled]="user.id < 1" class="btn btn-danger float-end" (click)="delete(user.id)">Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home">Drug Prescription</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <button *ngIf="!userService.getToken()" type="button" class="btn btn-primary me-2" routerLink="/login">login</button>
+            <button *ngIf="!userService.getToken()" type="button" class="btn btn-success" routerLink="/add-user">register</button>
+            <button *ngIf="userService.getToken()" type="button" class="btn btn-danger" (click)="logout()">logout</button>
+        </div>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,9 @@
+<div class="section">
+  <div class="container mx-5 text">
+    <p class="h2"> Welcome to Online Drug Information System  where you can get details of Drug. </p>
+    <br/>
+    <p class="h3"> Below is the button to proceed in order to check for a specific Drug Prescription. </p>
+    <a *ngIf="!loggedIn" routerLink="/login" class="btn btn-lg mt-5 btn-outline-primary float-end">LOGIN</a>
+    <a *ngIf="loggedIn" routerLink="/search" class="btn btn-lg mt-5 btn-primary float-end">PROCEED</a>
+</div>
+</div>

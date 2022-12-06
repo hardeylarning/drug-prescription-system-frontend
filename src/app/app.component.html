@@ -1,0 +1,3 @@
+<app-navbar *ngIf="!isAdmin"></app-navbar>
+<app-nav-admin *ngIf="isAdmin"></app-nav-admin>
+<router-outlet></router-outlet>

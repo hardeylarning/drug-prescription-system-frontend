@@ -1,0 +1,62 @@
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-2">
+            <!-- <app-side-bar></app-side-bar> -->
+        </div>
+        <div class="col-md">
+            <div class="row">
+                <div class="col-md-6 p-3">
+                    <h3 >Add User</h3>
+                    <form #form="ngForm" (ngSubmit)="onSubmit()" >
+                        <div class="mb-3">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" required class="form-control" name="fullName" [(ngModel)]="fullName" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="userName">Username</label>
+                            <input type="text" required class="form-control" name="userName" [(ngModel)]="userName" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="country">Country</label>
+                            <input type="text" required class="form-control" name="country" [(ngModel)]="country" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="password">Password</label>
+                            <input type="password" required class="form-control" name="password" [(ngModel)]="password" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="number" required class="form-control" name="phoneNumber" [(ngModel)]="phoneNumber" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="location">Location</label>
+                            <input type="text" required class="form-control" name="location" [(ngModel)]="location" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="address">Address</label>
+                            <input type="text" required class="form-control" name="address" [(ngModel)]="address" />
+                        </div>
+                        <div class="mb-3">
+                            <h5 >Gender</h5>
+                            <div class="from-check form-switch">
+                                <input class="form-check-input" type="radio" name="gender" [(ngModel)]="gender" id="male" [value]="'Male'" />
+                                 <label class="form-check-label" for="male"> Male </label>
+                            </div>
+                            <div class="from-check form-switch me-3">
+                                <input class="form-check-input" type="radio" name="gender" [(ngModel)]="gender" id="female" [value]="'Female'" />
+                            <label class="form-check-label" for="female"> Female </label>
+                            </div>
+                            
+                            
+
+                            
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success" [disabled]="form.invalid">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

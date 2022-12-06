@@ -1,0 +1,38 @@
+<div class="container text-center mt-5">
+    <h1 class="mb-5">Search for a specific Drug here</h1>
+    <form #searchForm="ngForm">
+        <div class="mb-3">
+            <div class="mb-3">
+                <input  type="search" [(ngModel)]="search" required name="search" id="search" placeholder="Search" class="form-control border-success">
+            </div>
+            <button [disabled]="searchForm.invalid" (click)="onSearch()" class="btn btn-success btn-lg" type="submit">Check</button>
+        </div>
+    </form>
+</div>
+
+<div class="container mt-5" *ngIf="drugs.length > 0">
+    <div class="row">
+        <div class="col-md" *ngFor="let drug of drugs">
+            <div class="card">
+                <h5 class="card-header">{{ drug.title }}</h5>
+                <div class="card-body">
+                  <h5 class="card-title"> {{ drug.dosage }} </h5>
+                  <p class="card-text"> {{ drug.description }} </p>
+                  <a [routerLink]="['/drug', drug.id]" class="btn btn-primary">Read more</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="drugs.length == 0">
+    <div class="container mt-5">
+        <h1 class="text-center">Your Search results will appear here</h1>
+    </div>
+</div>
+
+<ng-component *ngIf="isRequested">
+    <div class="container mt-5">
+        <h1 class="text-center">No Search Found</h1>
+    </div>
+</ng-component>

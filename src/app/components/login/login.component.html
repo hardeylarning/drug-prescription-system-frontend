@@ -1,0 +1,32 @@
+<div class="container text-center row" style="margin-top: 100px;">
+    <div class="offset-md-3 col-md-6">
+        <h1 class="border-bottom fw-bold mb-4">Login</h1>
+        <form #loginForm="ngForm">
+          <div class="mb-2">
+    
+            <input
+            required
+              class="form-control"
+              placeholder="Enter a valid username"
+              type="text"
+              name="username"
+              [(ngModel)]="username"
+            />
+          </div>
+          <div class="mb-2">
+            <input
+            required
+              class="form-control"
+              placeholder="Enter a valid password"
+              type="password"
+              name="password"
+              [(ngModel)]="password"
+            />
+          </div>
+      
+          <button [disabled]="loginForm.invalid" (click)="login()" type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+    </div>
+   
+  </div>
+  

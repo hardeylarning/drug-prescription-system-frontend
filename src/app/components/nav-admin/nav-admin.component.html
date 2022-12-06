@@ -1,0 +1,69 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home">Drug Prescription</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/search">Search</a>
+          </li>
+          <li *ngIf="isAdmin" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dashboard
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/users">Users</a></li>
+              <li><a class="dropdown-item" routerLink="/add-user">Add User</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" routerLink="/drugs">Drugs</a></li>
+              <li><a class="dropdown-item" routerLink="/add-drug">Add Drug</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="d-flex">
+            <button *ngIf="!userService.getToken()" type="button" class="btn btn-primary me-2" routerLink="/login">login</button>
+            <button *ngIf="!userService.getToken()" type="button" class="btn btn-success" routerLink="/add-user">register</button>
+            <button *ngIf="userService.getToken()" type="button" class="btn btn-danger" (click)="logout()">logout</button>
+        </div>
+      </div>
+    </div>
+  </nav> -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home">Drug Prescription</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <p class="text-white h3">Admin Dashboard</p>
+            </li>
+            <li *ngIf="isAdmin" class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              </a>
+              <ul class="dropdown-menu" id="dd">
+                <li><a class="dropdown-item" routerLink="/users">Users</a></li>
+                <li><a class="dropdown-item" routerLink="/add-user">Add User</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" routerLink="/drugs">Drugs</a></li>
+                <li><a class="dropdown-item" routerLink="/add-drug">Add Drug</a></li>
+              </ul>
+            </li>
+          </ul>
+        <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <button *ngIf="!userService.getToken()" type="button" class="btn btn-primary me-2" routerLink="/login">login</button>
+            <button *ngIf="!userService.getToken()" type="button" class="btn btn-success" routerLink="/add-user">register</button>
+            <button *ngIf="userService.getToken()" type="button" class="btn btn-danger" (click)="logout()">logout</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  

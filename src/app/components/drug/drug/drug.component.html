@@ -1,0 +1,21 @@
+
+<div *ngIf="drug" class="container mt-5">
+    <h1 class="bg-dark text-white text-center p-4 mb-3">{{ drug.title }}</h1>
+    <div class="row">
+        <div class="col-md">
+            <img src="/assets/images/a1.JPG" class="card-img img" alt="" srcset="">
+        </div>
+        <div class="col-md">
+            <p>Name:  <span class="fw-bold">{{ drug.title }}</span></p>
+            <p>Description:  <span class="fw-bold">{{ drug.description }}</span></p>
+            <p>Side Effect:   <span class="fw-bold">{{ drug.sideEffect }}</span></p>
+            <p>Dosage:  <span class="fw-bold">{{ drug.dosage }}</span></p>
+            <p>Age range:  <span class="fw-bold">{{ drug.age }}</span></p>
+            <p>Manufacture Date:  <span class="badge bg-secondary">{{ drug.mfDate | date:'medium' }}</span></p>
+            <p>Expiry Date:  <span class="badge bg-secondary">{{ drug.exDate | date:'medium'}}</span></p>
+        </div>
+    </div>
+</div>
+<div *ngIf="!drug" class="container text-center" style="margin-top: 100px;">
+    <h1 class="display-2">No Drug is available</h1>
+</div>

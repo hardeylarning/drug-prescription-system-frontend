@@ -33,6 +33,14 @@
                             <label for="age">Age</label>
                             <input type="text" required class="form-control" name="age" [(ngModel)]="age" />
                         </div>
+                        <div class="mb-3">
+                            <label for="age">Manufacture Date</label>
+                            <input type="date" required class="form-control" name="mfDate" [(ngModel)]="mfDate" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="age">Expiry Date</label>
+                            <input type="date" required class="form-control" name="exDate" [(ngModel)]="exDate" />
+                        </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-success" [disabled]="form.invalid">Submit</button>
                         </div>

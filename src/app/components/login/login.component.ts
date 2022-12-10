@@ -34,6 +34,8 @@ export class LoginComponent implements OnInit {
 
     console.log('Token Decoded:=> ', result.scopes);
     // console.log('Buffer Decoded:=> ', undepreceated);
+    this.ngOnInit();
+    window.location.replace('/home')
         this.router.navigate(['/home'])
       }
     })

@@ -22,7 +22,9 @@ export class NavbarComponent implements OnInit {
   logout() {
     localStorage.removeItem('token')
     this.isAdmin = false
-    this.router.navigate(['login'])
+    // this.ngOnInit()
+    window.location.replace('/home')
+    // this.router.navigate(['login'])
   }
 
 

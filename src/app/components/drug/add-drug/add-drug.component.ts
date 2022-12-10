@@ -16,6 +16,8 @@ export class AddDrugComponent implements OnInit {
   sideEffect = ''
   dosage = ''
   age = ''
+  mfDate!: Date
+  exDate!: Date
 
   file!: File
   constructor(private drugService: DrugService, private router: Router) {}
@@ -30,8 +32,8 @@ export class AddDrugComponent implements OnInit {
       this.sideEffect,
       this.dosage,
       this.age,
-      new Date(),
-      new Date()
+      this.mfDate,
+      this.exDate
     )
     this.drugService.addDrug(drug).subscribe((data) => {
       this.drugService.setMessage("Drug has been added successfully!");
